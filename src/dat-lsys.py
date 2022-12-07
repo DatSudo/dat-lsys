@@ -1,5 +1,4 @@
 import tkinter as tk
-import tkinter.ttk as ttk
 import turtle
 import argparse
 
@@ -15,6 +14,9 @@ USAGE = """
 """
 
 GEN_LIMIT = 7
+
+SCREEN_BG = "#1D2021"
+PEN_COLOR = "#EBDBB2"
 
 
 def draw_lsystem(lsys: str, numgen: int, pen) -> None:
@@ -57,11 +59,11 @@ def main() -> None:
     tcanvas.pack(fill="both", expand=True)
 
     screen = turtle.TurtleScreen(tcanvas)
-    screen.bgcolor("black")
+    screen.bgcolor(SCREEN_BG)
     screen.screensize(10000, 10000)
 
     pen = turtle.RawTurtle(screen)
-    pen.color("yellow")
+    pen.color(PEN_COLOR)
     pen.hideturtle()
 
     screen.tracer(0)
