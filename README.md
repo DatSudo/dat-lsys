@@ -27,11 +27,11 @@ Example:
 * **Axiom:** $F$
 * **Rules:** $F \rightarrow F+F-F-F+F$
 
-$$\begin{align}
-G=0 \righarrow & F \\
+$$\begin{align*}
+G=0 \rightarrow & F \\
 G=1 \rightarrow & F+F−F−F+F \\
-G=2 \rightarrow & F+F−F−F+F+F+F−F−F+F−F+F−F−F+F−F+F−F−F+F+F+F−F−F+F \\
-\end{align}$$
+G=2 \rightarrow & F+F−F−F+\dots −F+F \\
+\end{align*}$$
 
 If we try to draw this with $F$ means "draw forward", $+$ means "turn left 90°", and $-$ means "turn right 90°":
 
@@ -41,6 +41,11 @@ At $G=4$:
 
 ![Koch curve at g = 4](assets/koch_at_4.png)
 
+### More examples:
+
+Dragon Curve | Sierpinski Triangle | Fractal Plant
+:-----------:|:-------------------:|:-------------:
+![](assets/dragon_curve.png) | ![](assets/sier_tri.png) | ![](assets/fractal_plant.png)
 
 
 ## TODO
