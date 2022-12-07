@@ -4,11 +4,11 @@
 
 ## Installation
 
-Clone the repo and run the `src/main.py`
+Clone the repo and run the `main.py` in `src` directory
 
 ```bash
 git clone https://github.com/DatSudo/dat-lsys.git
-cd dat-lsys
+cd dat-lsys/src
 python main.py
 
 # or
