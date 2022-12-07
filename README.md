@@ -2,27 +2,41 @@
 
 [L-System](https://jsantell.com/l-systems/) generator implemented in `Python3`.
 
-## Installation
+## Usage
 
-Clone the repo and run the `main.py` in `src` directory
+- Clone the repo and go to `src` directory
 
-```bash
-git clone https://github.com/DatSudo/dat-lsys.git
-cd dat-lsys/src
-python main.py
+    ```bash
+    git clone https://github.com/DatSudo/dat-lsys.git
+    cd dat-lsys/src
+    ```
 
-# or
-python3 main.py
-```
+- Run `dat-lsys.py`
 
-## How it works
+    ```bash
+    # Show usage
+    python dat-lsys.py -h
+
+    # Generate l-system
+    python dat-lsys.py -l kc -n 6
+    ```
+
+- Args:
+    * `-l, --lsystem [l-system name initials]`
+        * `kc`: Koch curve
+        * `dc`: Dragon curve
+        * `st`: Sierpinski triangle
+        * `fp`: Fractal plant
+    * `-n --numgen [number of generations]`: Must be between 0 and 7 only. You might want to change that if you have a beefy PC.
+
+## How L-system works
 
 You need to have these three:
 - **Alphabet/symbols.** Each symbol corresponds to some graphics movement such as "forward", "turn right", etc.
 - **Axiom.** The initial state.
 - **Rules.** Rules on how symbols will transform in each generation.
 
-Example:
+Example (Koch curve):
 * **Symbols:** $F$, $+$, $-$
 * **Axiom:** $F$
 * **Rules:** $F \rightarrow F+F-F-F+F$
@@ -50,8 +64,6 @@ Dragon Curve | Sierpinski Triangle | Fractal Plant
 
 ## TODO
 - [X] README
-    - [X] Installation
-    - [X] How it works
 - [ ] GUI
 - [ ] Documentation
 - [ ] LICENSE
