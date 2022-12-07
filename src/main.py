@@ -14,6 +14,18 @@ USAGE = """
     python dat-lsys.py [-h] [-l {L-system}] [-n {0,...,7}]
 """
 
+GEN_LIMIT = 7
+
+
+def draw_lsystem(lsys: str, numgen: int, pen) -> None:
+    lsystems = {
+        "kc": lambda pen, numgen: koch_curve(pen, numgen),
+        "dc": lambda pen, numgen: dragon_curve(pen, numgen),
+        "st": lambda pen, numgen: sierpinski_triangle(pen, numgen),
+        "fp": lambda pen, numgen: fractal_plant(pen,numgen)
+    }
+
+    lsystems[lsys](pen, numgen)
 
 
 def main() -> None:
@@ -24,13 +36,13 @@ def main() -> None:
         usage=USAGE)
 
     parser.add_argument(
-        "-l", "--lsystem", help="L-System name",
+        "-l", "--lsystem", help="L-system name",
         choices={"kc", "dc", "st", "fp"})
     parser.add_argument(
         "-n", "--numgen",
         help="Number of generations",
         type=int,
-        choices={n for n in range(0,8)})
+        choices={n for n in range(0,GEN_LIMIT + 1)})
 
     args = parser.parse_args()
 
@@ -54,6 +66,7 @@ def main() -> None:
 
     screen.tracer(0)
 
+    draw_lsystem(args.lsystem, args.numgen, pen)
 
     screen.update()
 
